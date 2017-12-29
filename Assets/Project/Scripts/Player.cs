@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public float jumpingForce = 200f;
+	public float jumpingVelocity = 5f;
+	public float mouvingVelocity = 5f;
+
+	private Rigidbody playerRigidbody;
 
 	// Use this for initialization
 	void Start () {
-		
+		playerRigidbody = GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
@@ -17,20 +20,47 @@ public class Player : MonoBehaviour {
 	}
 
 	void ProcessInput(){
+
+		playerRigidbody.velocity = new Vector3 (
+			0,
+			playerRigidbody.velocity.y,
+			0
+		);
+
 		if (Input.GetKey("right")) {
-			transform.position += Vector3.right * 5f * Time.deltaTime;
+			playerRigidbody.velocity = new Vector3 (
+				mouvingVelocity,
+				playerRigidbody.velocity.y,
+				playerRigidbody.velocity.z
+			);
 		}
 		if (Input.GetKey("left")) {
-			transform.position += Vector3.left * 5f * Time.deltaTime;
+			playerRigidbody.velocity = new Vector3 (
+				-mouvingVelocity,
+				playerRigidbody.velocity.y,
+				playerRigidbody.velocity.z
+			);
 		}
 		if (Input.GetKey("up")) {
-			transform.position += Vector3.forward * 5f * Time.deltaTime;
+			playerRigidbody.velocity = new Vector3 (
+				playerRigidbody.velocity.x,
+				playerRigidbody.velocity.y,
+				mouvingVelocity
+			);
 		}
 		if (Input.GetKey("down")) {
-			transform.position += Vector3.back * 5f * Time.deltaTime;
+			playerRigidbody.velocity = new Vector3 (
+				playerRigidbody.velocity.x,
+				playerRigidbody.velocity.y,
+				-mouvingVelocity
+			);
 		}
 		if (Input.GetKeyDown("space") && canJump()) {
-			GetComponent<Rigidbody>().AddForce(0, jumpingForce, 0);
+			playerRigidbody.velocity = new Vector3 (
+				playerRigidbody.velocity.x,
+				jumpingVelocity,
+				playerRigidbody.velocity.z
+			);
 		}
 	}
 
