@@ -160,6 +160,7 @@ MonoBehaviour:
   rotatingSpeed: 5
   jumpingVelocity: 5
   movingVelocity: 5
+  sword: {fileID: 1499827517}
 --- !u!65 &121747257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -280,10 +281,9 @@ GameObject:
   m_Component:
   - component: {fileID: 605917070}
   - component: {fileID: 605917073}
-  - component: {fileID: 605917072}
   - component: {fileID: 605917071}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,18 +336,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &605917072
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 605917069}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &605917073
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -364,10 +352,9 @@ GameObject:
   m_Component:
   - component: {fileID: 780032546}
   - component: {fileID: 780032549}
-  - component: {fileID: 780032548}
   - component: {fileID: 780032547}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,8 +367,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 780032545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.517, z: 0}
-  m_LocalScale: {x: 0.05073184, y: 1.0113834, z: 0.050731823}
+  m_LocalPosition: {x: 0, y: 0.6277, z: 0}
+  m_LocalScale: {x: 0.05073184, y: 1.2327663, z: 0.050731823}
   m_Children: []
   m_Father: {fileID: 1499827515}
   m_RootOrder: 1
@@ -420,18 +407,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &780032548
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 780032545}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &780032549
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -612,6 +587,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1499827515}
+  - component: {fileID: 1499827517}
+  - component: {fileID: 1499827516}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -635,6 +612,33 @@ Transform:
   m_Father: {fileID: 1831191510}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1499827516
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499827514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 1.25, z: 0.1}
+  m_Center: {x: 0, y: 0.65, z: 0}
+--- !u!114 &1499827517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499827514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d160cf1844af744be6e6fa16e745a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingingSpeed: 10
+  cooldownSpeed: 8
+  attackDuration: 0.25
+  cooldownDuration: 0.25
 --- !u!1 &1733763086
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,10 +799,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1815133059}
   - component: {fileID: 1815133062}
-  - component: {fileID: 1815133061}
   - component: {fileID: 1815133060}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,18 +854,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1815133061
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1815133058}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1815133062
 MeshFilter:
   m_ObjectHideFlags: 0

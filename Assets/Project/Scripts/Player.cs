@@ -12,6 +12,9 @@ public class Player : MonoBehaviour {
 	public float jumpingVelocity = 5f;
 	public float movingVelocity = 5f;
 
+	[Header("Equipment")]
+	public Sword sword;
+
 	private Rigidbody playerRigidbody;
 	private Quaternion targetModelRotation;
 
@@ -73,6 +76,9 @@ public class Player : MonoBehaviour {
 				jumpingVelocity,
 				playerRigidbody.velocity.z
 			);
+		}
+		if (Input.GetKeyDown("z") && canJump()) {
+			sword.Attack ();
 		}
 	}
 
