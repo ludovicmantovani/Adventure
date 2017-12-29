@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+	[Header("Visuals")]
+	public GameObject model;
+	public float rotatingSpeed = 5f;
+
+	[Header("Movement")]
 	public float jumpingVelocity = 5f;
-	public float mouvingVelocity = 5f;
+	public float movingVelocity = 5f;
 
 	private Rigidbody playerRigidbody;
+	private Quaternion targetModelRotation;
 
 	// Use this for initialization
 	void Start () {
 		playerRigidbody = GetComponent<Rigidbody> ();
+		targetModelRotation = Quaternion.Euler (0, 0, 0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		model.transform.rotation = Quaternion.Lerp(model.transform.rotation, targetModelRotation, Time.deltaTime * rotatingSpeed);
 		ProcessInput ();
 	}
 
@@ -29,31 +37,35 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetKey("right")) {
 			playerRigidbody.velocity = new Vector3 (
-				mouvingVelocity,
+				movingVelocity,
 				playerRigidbody.velocity.y,
 				playerRigidbody.velocity.z
 			);
+			targetModelRotation = Quaternion.Euler(0, 270, 0);
 		}
 		if (Input.GetKey("left")) {
 			playerRigidbody.velocity = new Vector3 (
-				-mouvingVelocity,
+				-movingVelocity,
 				playerRigidbody.velocity.y,
 				playerRigidbody.velocity.z
 			);
+			targetModelRotation = Quaternion.Euler(0, 90, 0);
 		}
 		if (Input.GetKey("up")) {
 			playerRigidbody.velocity = new Vector3 (
 				playerRigidbody.velocity.x,
 				playerRigidbody.velocity.y,
-				mouvingVelocity
+				movingVelocity
 			);
+			targetModelRotation = Quaternion.Euler(0, 180, 0);
 		}
 		if (Input.GetKey("down")) {
 			playerRigidbody.velocity = new Vector3 (
 				playerRigidbody.velocity.x,
 				playerRigidbody.velocity.y,
-				-mouvingVelocity
+				-movingVelocity
 			);
+			targetModelRotation = Quaternion.Euler(0, 0, 0);
 		}
 		if (Input.GetKeyDown("space") && canJump()) {
 			playerRigidbody.velocity = new Vector3 (
