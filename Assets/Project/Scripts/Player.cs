@@ -14,6 +14,8 @@ public class Player : MonoBehaviour {
 
 	[Header("Equipment")]
 	public Sword sword;
+	public Bow bow;
+	public int arrowAmount = 15;
 	public GameObject bombPrefab;
 	public int bombAmount = 5;
 	public float throwingSpeed = 200;
@@ -84,8 +86,15 @@ public class Player : MonoBehaviour {
 			sword.Attack ();
 		}
 		if (Input.GetKeyDown("x")) {
+			if (arrowAmount > 0) {
+				bow.Attack ();
+				arrowAmount--;
+			}
+		}
+		if (Input.GetKeyDown("c")) {
 			if (bombAmount > 0) {
 				ThrowBomb ();
+				bombAmount--;
 			}
 		}
 	}
@@ -100,6 +109,5 @@ public class Player : MonoBehaviour {
 		bombObject.transform.position = transform.position + model.transform.forward;
 		Vector3 throwingDirection = (model.transform.forward + Vector3.up).normalized;
 		bombObject.GetComponent<Rigidbody> ().AddForce (throwingDirection * throwingSpeed);
-		bombAmount--;
 	}
 }
