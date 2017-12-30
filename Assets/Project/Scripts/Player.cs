@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 	public float knockbacForce = 300f;
 
 	[Header("Equipment")]
-	public int health = 10;
+	public int health = 5;
 	public Sword sword;
 	public Bow bow;
 	public int arrowAmount = 15;
