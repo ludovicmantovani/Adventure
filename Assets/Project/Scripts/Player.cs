@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		bow.gameObject.SetActive (false);
+		sword.gameObject.SetActive (true);
 		playerRigidbody = GetComponent<Rigidbody> ();
 		targetModelRotation = Quaternion.Euler (0, 0, 0);
 	}
@@ -83,9 +85,13 @@ public class Player : MonoBehaviour {
 			);
 		}
 		if (Input.GetKeyDown("z")) {
+			bow.gameObject.SetActive (false);
+			sword.gameObject.SetActive (true);
 			sword.Attack ();
 		}
 		if (Input.GetKeyDown("x")) {
+			sword.gameObject.SetActive (false);
+			bow.gameObject.SetActive (true);
 			if (arrowAmount > 0) {
 				bow.Attack ();
 				arrowAmount--;
