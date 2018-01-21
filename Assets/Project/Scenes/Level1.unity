@@ -2279,6 +2279,8 @@ Transform:
   m_Children:
   - {fileID: 209683195}
   - {fileID: 824401597}
+  - {fileID: 1677372332}
+  - {fileID: 2055941456}
   m_Father: {fileID: 1475606190}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2451,6 +2453,61 @@ Transform:
   m_PrefabParentObject: {fileID: 4408855207239174, guid: 369daadab5c799742a0e7a27cdf5faca,
     type: 2}
   m_PrefabInternal: {fileID: 1330366104}
+--- !u!1 &1677372331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1677372332}
+  - component: {fileID: 1677372334}
+  - component: {fileID: 1677372333}
+  m_Layer: 0
+  m_Name: Teleporter
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677372332
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1677372331}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 277.694, y: 2.725, z: 167.331}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1605038876}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1677372333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1677372331}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1677372334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1677372331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb3855f6ede9304f82679777c36ec8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitTeleporter: {fileID: 2055941458}
+  exitOffset: 2
 --- !u!1 &1687053909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,7 +2739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ad4c53db62ca84ea02d0f20d49eb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 121747254}
+  player: {fileID: 121747256}
   offset: {x: 0, y: 12, z: -4}
   focusSpeed: 3.5
 --- !u!114 &1749317470
@@ -3016,6 +3073,61 @@ Transform:
   m_PrefabParentObject: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07,
     type: 2}
   m_PrefabInternal: {fileID: 1527156009}
+--- !u!1 &2055941455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2055941456}
+  - component: {fileID: 2055941458}
+  - component: {fileID: 2055941457}
+  m_Layer: 0
+  m_Name: Teleporter (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055941456
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2055941455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 292.93, y: 2.725, z: 181.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1605038876}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2055941457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2055941455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2055941458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2055941455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb3855f6ede9304f82679777c36ec8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitTeleporter: {fileID: 1677372334}
+  exitOffset: 2
 --- !u!1 &2069591793
 GameObject:
   m_ObjectHideFlags: 0

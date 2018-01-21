@@ -25,6 +25,15 @@ public class Player : MonoBehaviour {
 	private Rigidbody playerRigidbody;
 	private Quaternion targetModelRotation;
 	private float knockbackTimer;
+	private bool justTeleported;
+
+	public bool JustTeleported{
+		get{
+			bool returnValue = justTeleported;
+			justTeleported = false;
+			return returnValue;
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -147,5 +156,10 @@ public class Player : MonoBehaviour {
 		if (health <= 0) {
 			Destroy (gameObject);
 		}
+	}
+
+	public void Teleport(Vector3 target){
+		transform.position = target;
+		justTeleported = true;
 	}
 }
