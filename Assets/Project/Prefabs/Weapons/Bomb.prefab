@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4037113272744410}
-  - component: {fileID: 135135410907495186}
   - component: {fileID: 54777508915446160}
+  - component: {fileID: 135135410907495186}
   - component: {fileID: 114074495752446738}
   m_Layer: 0
   m_Name: Bomb
