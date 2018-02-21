@@ -7,6 +7,8 @@ public class ShootingEnemy : Enemy {
 	public GameObject model;
 	public float timeToRotate = 2f;
 	public float rotationSpeed = 6f;
+	public bool rotateClockwise = true;
+	public int startingAngle = 0;
 
 	public GameObject bulletPrefab;
 	public float timeToShoot = 1f;
@@ -19,6 +21,8 @@ public class ShootingEnemy : Enemy {
 	void Start () {
 		rotationTimer = timeToRotate;
 		shootingTimer = timeToShoot;
+		targetAngle = startingAngle;
+		transform.localRotation = Quaternion.Euler (0, targetAngle, 0);
 	}
 	
 	// Update is called once per frame
@@ -27,7 +31,7 @@ public class ShootingEnemy : Enemy {
 		if (rotationTimer <= 0) {
 			rotationTimer = timeToRotate;
 
-			targetAngle += 90;
+			targetAngle += rotateClockwise ? 90 : -90 ;
 		}
 		transform.localRotation = Quaternion.Lerp (transform.localRotation, Quaternion.Euler (0, targetAngle, 0), Time.deltaTime * rotationSpeed);
 

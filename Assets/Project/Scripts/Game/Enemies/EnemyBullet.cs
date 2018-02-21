@@ -17,4 +17,14 @@ public class EnemyBullet : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
+	void OnTriggerEnter(Collider otherCollider){
+		GameObject parentGO = null;
+		if (otherCollider && otherCollider.transform && otherCollider.transform.parent) {
+			parentGO = otherCollider.transform.parent.gameObject;
+		}
+		if (parentGO != null && parentGO.tag == "Wall") {
+			Destroy (gameObject);
+		}
+	}
 }
