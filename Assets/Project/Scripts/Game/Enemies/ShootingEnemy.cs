@@ -10,6 +10,7 @@ public class ShootingEnemy : Enemy {
 	public bool rotateClockwise = true;
 	public int startingAngle = 0;
 
+	public GameObject bulletSpawnPoint;
 	public GameObject bulletPrefab;
 	public float timeToShoot = 1f;
 
@@ -40,7 +41,7 @@ public class ShootingEnemy : Enemy {
 			shootingTimer = timeToShoot;
 
 			GameObject bulletObject = Instantiate (bulletPrefab);
-			bulletObject.transform.position = transform.position + model.transform.forward;
+			bulletObject.transform.position = bulletSpawnPoint.transform.position;
 			bulletObject.transform.forward = model.transform.forward;
 		}
 	}
