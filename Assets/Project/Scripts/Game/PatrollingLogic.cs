@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PatrollingLogic : MonoBehaviour {
 
+	public GameObject model;
 	public Vector3[] directions;
 	public float timeToChange = 1f;
 	public float movementSpeed = 5f;
@@ -26,6 +27,8 @@ public class PatrollingLogic : MonoBehaviour {
 				directionPointer = 0;
 			}
 		}
+
+		model.transform.forward = directions[directionPointer];
 
 		GetComponent<Rigidbody> ().velocity = new Vector3 (
 			directions [directionPointer].x * movementSpeed,
