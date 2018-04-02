@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
 	[Header("Visuals")]
 	public GameObject model;
+	public Animator playerAnimator;
 	public float rotatingSpeed = 5f;
 
 	[Header("Movement")]
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour {
 	private Quaternion targetModelRotation;
 	private float knockbackTimer;
 	private bool justTeleported;
+	private Vector3 originalPlayerAnimatorPosition;
 
 	public bool JustTeleported{
 		get{
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour {
 		sword.gameObject.SetActive (true);
 		playerRigidbody = GetComponent<Rigidbody> ();
 		targetModelRotation = Quaternion.Euler (0, 0, 0);
+		originalPlayerAnimatorPosition = playerAnimator.transform.localPosition;
 	}
 	
 	// Update is called once per frame
@@ -54,13 +57,21 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	void LateUpdate(){
+		playerAnimator.transform.localPosition = originalPlayerAnimatorPosition;
+	}
+
+
 	void ProcessInput(){
+		bool isPlayerMoving = false;
 
 		playerRigidbody.velocity = new Vector3 (
 			0,
 			playerRigidbody.velocity.y,
 			0
 		);
+
+		playerAnimator.SetBool ("OnGround", CanJump ());
 
 		if (Input.GetKey("right")) {
 			playerRigidbody.velocity = new Vector3 (
@@ -69,6 +80,7 @@ public class Player : MonoBehaviour {
 				playerRigidbody.velocity.z
 			);
 			targetModelRotation = Quaternion.Euler(0, 90, 0);
+			isPlayerMoving = true;
 		}
 		if (Input.GetKey("left")) {
 			playerRigidbody.velocity = new Vector3 (
@@ -77,6 +89,7 @@ public class Player : MonoBehaviour {
 				playerRigidbody.velocity.z
 			);
 			targetModelRotation = Quaternion.Euler(0, 270, 0);
+			isPlayerMoving = true;
 		}
 		if (Input.GetKey("up")) {
 			playerRigidbody.velocity = new Vector3 (
@@ -85,6 +98,7 @@ public class Player : MonoBehaviour {
 				movingVelocity
 			);
 			targetModelRotation = Quaternion.Euler(0, 0, 0);
+			isPlayerMoving = true;
 		}
 		if (Input.GetKey("down")) {
 			playerRigidbody.velocity = new Vector3 (
@@ -93,7 +107,11 @@ public class Player : MonoBehaviour {
 				-movingVelocity
 			);
 			targetModelRotation = Quaternion.Euler(0, 180, 0);
+			isPlayerMoving = true;
 		}
+
+		playerAnimator.SetFloat ("Forward", isPlayerMoving ? 1f: 0f);
+
 		if (Input.GetKeyDown("space") && CanJump()) {
 			playerRigidbody.velocity = new Vector3 (
 				playerRigidbody.velocity.x,
@@ -124,7 +142,7 @@ public class Player : MonoBehaviour {
 
 	private bool CanJump(){
 		RaycastHit hit;
-		return(Physics.Raycast (transform.position, Vector3.down, out hit, 1.01f));
+		return(Physics.Raycast (transform.position, Vector3.down, out hit, 1.31f));
 	}
 
 	private void ThrowBomb(){
