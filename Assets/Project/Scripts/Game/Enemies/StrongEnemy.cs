@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class StrongEnemy : Enemy {
 
-	// Use this for initialization
-	void Start () {
-		
+	public Animator enemyAnimator;
+
+	private Vector3 originalEnemyAnimatorPosition;
+
+	void Awake(){
+		originalEnemyAnimatorPosition = enemyAnimator.transform.localPosition;
+		enemyAnimator.SetFloat ("Forward", 0.3f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void LateUpdate () {
+		enemyAnimator.transform.localPosition = originalEnemyAnimatorPosition;
 	}
 
 }
