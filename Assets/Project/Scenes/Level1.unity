@@ -5070,52 +5070,6 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9fdc1f813a1c84c889180020d06f7384, type: 3}
   m_PrefabInternal: {fileID: 1648194802}
---- !u!1001 &778556710
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1475606190}
-    m_Modifications:
-    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 254.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 196
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643842571699392, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-      propertyPath: m_Name
-      value: SimpleEnemy (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &780032545
 GameObject:
   m_ObjectHideFlags: 0
@@ -9363,6 +9317,52 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1537605371}
+--- !u!1001 &1544936164
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1475606190}
+    m_Modifications:
+    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 254.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643842571699392, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+      propertyPath: m_Name
+      value: SimpleEnemy (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1557573334
 Prefab:
   m_ObjectHideFlags: 0
@@ -11439,7 +11439,7 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07,
     type: 2}
-  m_PrefabInternal: {fileID: 778556710}
+  m_PrefabInternal: {fileID: 1544936164}
 --- !u!1001 &1858281141
 Prefab:
   m_ObjectHideFlags: 0
