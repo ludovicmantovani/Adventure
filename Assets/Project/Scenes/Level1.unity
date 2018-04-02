@@ -498,6 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 1831191509}
+  playerAnimator: {fileID: 886809073}
   rotatingSpeed: 5
   jumpingVelocity: 5
   movingVelocity: 5
@@ -1179,9 +1180,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: b5f9f052d24bd4521b8582edc6fa14cb, type: 3}
 --- !u!4 &223290901 stripped
@@ -2898,7 +2899,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 418071933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcb1980a0b0f6c843a2b6711254db08d, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &437673882
@@ -5347,9 +5348,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300004, guid: b5f9f052d24bd4521b8582edc6fa14cb, type: 3}
 --- !u!1 &824401596
@@ -5435,9 +5436,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b5f9f052d24bd4521b8582edc6fa14cb, type: 3}
 --- !u!4 &828428578 stripped
@@ -5819,6 +5820,11 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: ddf727b930cd0451d923447621c5cfce, type: 3}
   m_PrefabInternal: {fileID: 879331397}
+--- !u!95 &886809073 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: f40637e36e6814b91aef848fe758edf2,
+    type: 3}
+  m_PrefabInternal: {fileID: 303233677}
 --- !u!1001 &888038516
 Prefab:
   m_ObjectHideFlags: 0
@@ -10707,6 +10713,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
