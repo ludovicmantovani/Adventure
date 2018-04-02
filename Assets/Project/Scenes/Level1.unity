@@ -11969,15 +11969,6 @@ Prefab:
       propertyPath: m_Name
       value: ShootingEnemy (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4252706054109488, guid: 476ef14a5c56c2d42a1edb4a8efe0c8a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114863769559116192, guid: 476ef14a5c56c2d42a1edb4a8efe0c8a,
-        type: 2}
-      propertyPath: rotateClockwise
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 476ef14a5c56c2d42a1edb4a8efe0c8a, type: 2}
   m_IsPrefabParent: 0

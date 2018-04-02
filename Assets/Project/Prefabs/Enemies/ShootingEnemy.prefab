@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1743346790012692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 242.44, y: 1.189, z: 187.98}
+  m_LocalPosition: {x: 230.44, y: 1.189, z: 187.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4505806666299144}
@@ -184,8 +184,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8, y: 1.2, z: 1.8}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.8, y: 1.5, z: 1.8}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &114863769559116192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,7 +201,7 @@ MonoBehaviour:
   model: {fileID: 1094441450521722}
   timeToRotate: 2
   rotationSpeed: 6
-  rotateClockwise: 0
+  rotateClockwise: 1
   startingAngle: 0
   bulletSpawnPoint: {fileID: 1841735110879694}
   bulletPrefab: {fileID: 1736987498483054, guid: 56a3ff83ea581d6498a9aca672024421,
