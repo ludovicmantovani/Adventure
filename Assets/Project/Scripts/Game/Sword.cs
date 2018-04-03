@@ -21,7 +21,7 @@ public class Sword : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		targetRotation = Quaternion.Euler (0, 0, 0);
+		targetRotation = Quaternion.Euler (0, 0, -90);
 	}
 	
 	// Update is called once per frame
@@ -38,7 +38,7 @@ public class Sword : MonoBehaviour {
 		if (cooldownTimer > 0f) {
 			return;
 		}
-		targetRotation = Quaternion.Euler (90, 0, 0);
+		targetRotation = Quaternion.Euler (0, 20, -110);
 		cooldownTimer = cooldownDuration;
 
 		StartCoroutine (CooldownWait ());
@@ -48,6 +48,6 @@ public class Sword : MonoBehaviour {
 		isAttacking = true;
 		yield return new WaitForSeconds (attackDuration);
 		isAttacking = false;
-		targetRotation = Quaternion.Euler (0, 0, 0);
+		targetRotation = Quaternion.Euler (0, 0, -90);
 	}
 }

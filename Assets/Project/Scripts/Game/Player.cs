@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
 	public int health = 5;
 	public Sword sword;
 	public Bow bow;
+	public GameObject quiver;
 	public int arrowAmount = 15;
 	public GameObject bombPrefab;
 	public int bombAmount = 5;
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		bow.gameObject.SetActive (false);
+		quiver.gameObject.SetActive (false);
 		sword.gameObject.SetActive (true);
 		playerRigidbody = GetComponent<Rigidbody> ();
 		targetModelRotation = Quaternion.Euler (0, 0, 0);
@@ -121,12 +123,14 @@ public class Player : MonoBehaviour {
 		}
 		if (Input.GetKeyDown("z")) {
 			bow.gameObject.SetActive (false);
+			quiver.gameObject.SetActive (false);
 			sword.gameObject.SetActive (true);
 			sword.Attack ();
 		}
 		if (Input.GetKeyDown("x")) {
 			sword.gameObject.SetActive (false);
 			bow.gameObject.SetActive (true);
+			quiver.gameObject.SetActive (true);
 			if (arrowAmount > 0) {
 				bow.Attack ();
 				arrowAmount--;
