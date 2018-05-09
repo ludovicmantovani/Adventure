@@ -7,6 +7,9 @@ public class Dungeon : MonoBehaviour {
 	private int enemyCount;
 	private Enemy[] enemies;
 	private int currentEnemyCount;
+	private Treasure treasure;
+	private bool isClear;
+
 
 	public int EnemyCount{
 		get{
@@ -24,6 +27,8 @@ public class Dungeon : MonoBehaviour {
 	void Start () {
 		enemies = GetComponentsInChildren<Enemy> ();
 		enemyCount = enemies.Length;
+		treasure = GetComponentInChildren<Treasure> ();
+		treasure.gameObject.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -32,6 +37,12 @@ public class Dungeon : MonoBehaviour {
 		foreach (Enemy enemy in enemies) {
 			if (enemy != null) {
 				currentEnemyCount++;
+			}
+		}
+		if (isClear == false) {
+			if (currentEnemyCount == 0) {
+				treasure.gameObject.SetActive (true);
+				isClear = true;
 			}
 		}
 	}
