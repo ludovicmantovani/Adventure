@@ -12,10 +12,17 @@ public class Sword : MonoBehaviour {
 	private Quaternion targetRotation;
 	private float cooldownTimer;
 	private bool isAttacking;
+	private bool justAttacked;
 
 	public bool IsAttacking{
 		get {
 			return isAttacking;
+		}
+	}
+
+	public bool JustAttacked{
+		get {
+			return justAttacked;
 		}
 	}
 
@@ -46,6 +53,12 @@ public class Sword : MonoBehaviour {
 
 	private IEnumerator CooldownWait(){
 		isAttacking = true;
+		justAttacked = true;
+
+		yield return new WaitForEndOfFrame ();
+		yield return new WaitForEndOfFrame ();
+		justAttacked = false;
+
 		yield return new WaitForSeconds (attackDuration);
 		isAttacking = false;
 		targetRotation = Quaternion.Euler (0, 0, -90);
