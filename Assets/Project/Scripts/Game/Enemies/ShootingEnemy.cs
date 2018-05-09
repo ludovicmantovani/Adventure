@@ -41,6 +41,7 @@ public class ShootingEnemy : Enemy {
 			shootingTimer = timeToShoot;
 
 			GameObject bulletObject = Instantiate (bulletPrefab);
+			bulletObject.transform.SetParent (transform.parent);
 			bulletObject.transform.position = bulletSpawnPoint.transform.position;
 			bulletObject.transform.forward = model.transform.forward;
 		}
