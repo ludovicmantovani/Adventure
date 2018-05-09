@@ -6,6 +6,19 @@ public class Dungeon : MonoBehaviour {
 
 	private int enemyCount;
 	private Enemy[] enemies;
+	private int currentEnemyCount;
+
+	public int EnemyCount{
+		get{
+			return enemyCount;
+		}
+	}
+
+	public int CurrentEnemyCount{
+		get{
+			return currentEnemyCount;
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -15,12 +28,11 @@ public class Dungeon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		int currentEnemyCount = 0;
+		currentEnemyCount = 0;
 		foreach (Enemy enemy in enemies) {
 			if (enemy != null) {
 				currentEnemyCount++;
 			}
 		}
-		Debug.Log(currentEnemyCount + " / " + enemyCount);
 	}
 }

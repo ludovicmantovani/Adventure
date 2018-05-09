@@ -29,12 +29,19 @@ public class Player : MonoBehaviour {
 	private float knockbackTimer;
 	private bool justTeleported;
 	private Vector3 originalPlayerAnimatorPosition;
+	private Dungeon currentDungeon;
 
 	public bool JustTeleported{
 		get{
 			bool returnValue = justTeleported;
 			justTeleported = false;
 			return returnValue;
+		}
+	}
+
+	public Dungeon CurrentDungeon{
+		get{
+			return currentDungeon;
 		}
 	}
 
@@ -160,6 +167,21 @@ public class Player : MonoBehaviour {
 		if (otherCollider.GetComponent<EnemyBullet>() != null) {
 			Hit ((transform.position - otherCollider.transform.position).normalized);
 			Destroy(otherCollider);
+		}
+	}
+
+	void OnTriggerStay(Collider otherCollider){
+		if (otherCollider.GetComponent<Dungeon>() != null) {
+			currentDungeon = otherCollider.GetComponent<Dungeon> ();
+		}
+	}
+
+	void OnTriggerExit(Collider otherCollider){
+		if (otherCollider.GetComponent<Dungeon>() != null) {
+			Dungeon exitDungeon = otherCollider.GetComponent<Dungeon> ();
+			if (exitDungeon == currentDungeon) {
+				currentDungeon = null;
+			}
 		}
 	}
 
