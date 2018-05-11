@@ -1814,7 +1814,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 432662889
+  randomSeed: 1670933512
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11561,10 +11561,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 400, y: 399.99963, z: 399.99963}
   m_Children:
-  - {fileID: 1851078448}
-  - {fileID: 1669571248}
   - {fileID: 1530845437}
   - {fileID: 593746004}
+  - {fileID: 1851078448}
+  - {fileID: 1669571248}
   - {fileID: 1443075908}
   - {fileID: 223290901}
   - {fileID: 723667465}
@@ -12306,7 +12306,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4408855207239174, guid: 369daadab5c799742a0e7a27cdf5faca, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4408855207239174, guid: 369daadab5c799742a0e7a27cdf5faca, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -13313,7 +13313,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4982476849452500, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1643842571699392, guid: 4f1942513f5f572408781fb60049ed07, type: 2}
       propertyPath: m_Name
@@ -13919,7 +13919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4252706054109488, guid: 476ef14a5c56c2d42a1edb4a8efe0c8a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4252706054109488, guid: 476ef14a5c56c2d42a1edb4a8efe0c8a, type: 2}
       propertyPath: m_LocalScale.x
@@ -14891,9 +14891,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ad4c53db62ca84ea02d0f20d49eb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 121747256}
+  target: {fileID: 121747254}
   offset: {x: 0, y: 12, z: -4}
   focusSpeed: 3.5
+  temporaryTarget: {fileID: 0}
+  temporaryFocusTime: 3
 --- !u!114 &1749317470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16135,7 +16137,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4252706054109488, guid: 476ef14a5c56c2d42a1edb4a8efe0c8a, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1743346790012692, guid: 476ef14a5c56c2d42a1edb4a8efe0c8a, type: 2}
       propertyPath: m_Name
@@ -17535,6 +17537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 121747256}
+  gameCamera: {fileID: 1749317469}
   hearts:
   - {fileID: 125305172}
   - {fileID: 207188699}

@@ -7,6 +7,7 @@ public class GameSceneControler : MonoBehaviour {
 
 	[Header("Game")]
 	public Player player;
+	public GameCamera gameCamera;
 
 	[Header("UI")]
 	public GameObject[] hearts;
@@ -36,6 +37,10 @@ public class GameSceneControler : MonoBehaviour {
 			dungeonPanel.SetActive(currentDungeon != null);
 			if (currentDungeon != null) {
 				dungeonInfoText.text = "Enemies: " + currentDungeon.CurrentEnemyCount + "/" + currentDungeon.EnemyCount;
+
+				if (currentDungeon.JustCleared) {
+					gameCamera.FocusOn  (currentDungeon.Treasure.gameObject);
+				}
 			}
 
 		} else {

@@ -9,6 +9,7 @@ public class Dungeon : MonoBehaviour {
 	private int currentEnemyCount;
 	private Treasure treasure;
 	private bool isClear;
+	private bool justCleared;
 
 
 	public int EnemyCount{
@@ -22,6 +23,21 @@ public class Dungeon : MonoBehaviour {
 			return currentEnemyCount;
 		}
 	}
+
+	public bool JustCleared{
+		get{
+			bool returnValue = justCleared;
+			justCleared = false;
+			return returnValue;
+		}
+	}
+
+	public Treasure Treasure{
+		get{
+			return treasure;
+		}
+	}
+
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +59,7 @@ public class Dungeon : MonoBehaviour {
 			if (currentEnemyCount == 0) {
 				treasure.gameObject.SetActive (true);
 				isClear = true;
+				justCleared = true;
 			}
 		}
 	}
